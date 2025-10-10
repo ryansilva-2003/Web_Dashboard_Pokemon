@@ -7,13 +7,35 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <header>
-            <img width="80" height="80" alt="Image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/2052px-Pok%C3%A9_Ball_icon.svg.png"/>
+    <header class="header">
         <nav class="navbar">
-            <a href="#">Home</a>
-            <a href="#">Pokedex</a>
+            <img width="80" height="80" alt="pokebola" src="imagens/pokeball2.png"/>
+            <div class="nav-links">
+            <a href="index.html" class="btnHome-popup">Home</a>
+            <a href="#" class="btnPokedex-popup">Pokémon</a>
+            </div>
         </nav>
-        </header>
+    </header>
+
+    <div class="wrapper">
+        <div class="form-box nome">
+            <h2>Procure seu pokémon</h2>
+            <form action="#">
+                <div class="input-box">
+                    <label>Nome</label>
+                    <input type="Nome" required>
+                </div>
+                <div class="input-box">
+                    <label>Tipo</label>
+                    <input type="Tipo" required>
+                </div>
+                <div class="input-box">
+                    <label>Geração</label>
+                    <input type="Geração" required>
+                </div>
+                </form>
+        </div>
+    </div>
 
     </body>
 </html>
