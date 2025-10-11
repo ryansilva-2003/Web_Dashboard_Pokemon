@@ -16,23 +16,39 @@
             </div>
         </nav>
     </header>
+    
+    <div class="title">
+        <h1>Pokedex</h1>
+        </div>
 
     <div class="wrapper">
         <div class="form-box nome">
             <h2>Procure seu pokémon</h2>
             <form action="#">
                 <div class="input-box">
-                    <label>Nome</label>
-                    <input type="Nome" required>
+                    <label>Nome pokémon</label>
+                    <input type="text" required>
                 </div>
-                <div class="input-box">
-                    <label>Tipo</label>
-                    <input type="Tipo" required>
-                </div>
+                <div class="multi-select" id="tipoSelect">
+                    <div class="selected">Tipo</div>
+                    <div class="options">
+                        <option value="fogo">Fogo</option>
+                        <option value="gua">água</option>
+                        <option value="planta">Grama</option>
+                        <option value="eletrico">Elétrico</option>
+                        <option value="pedra">Pedra</option>
+                        <option value="inseto">Inseto</option>
+                        <option value="fantasma">Fantasma</option>
+                        <option value="voador">Voador</option>
+                        <option value="psiquico">Psíquico</option>
+                        <opttion value="normal">Normal</opttion>
+                        </div>
+                    </div>
                 <div class="input-box">
                     <label>Geração</label>
-                    <input type="Geração" required>
+                    <input type="text" required>
                 </div>
+                <button type="submit" class="search-btn">Search</button>
                 </form>
         </div>
     </div>
