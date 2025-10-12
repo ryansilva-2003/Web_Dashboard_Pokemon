@@ -11,7 +11,7 @@ typeItems.forEach(item => {
     item.addEventListener("click", () => {
         item.classList.toggle("checked");
         const checked = document.querySelectorAll(".item.checked");
-        btnText.innerText = checked.length > 0 ? `${checked.length} Selecionado(s)` : "Selecionar tipo";
+        btnText.innerText = checked.length > 0 ? `${checked.length} Selecionado(s)` : "Selecionar tipo V";
     });
 });
 

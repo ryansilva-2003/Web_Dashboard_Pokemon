@@ -10,12 +10,10 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: flex-start; 
-    align-items: center;
     min-height: 100vh;
     background: url('imagens/wallpaper.jpg') no-repeat;
-    background-size: cover;
-    background-position: center;
-    padding-top: 120px;
+    padding-top: 105px;
+    margin: 0;
 }
 
 header{
@@ -90,17 +88,18 @@ header{
     margin-bottom: 500px; 
 }
 
-.title{
-    display: flex;
-    margin-right: 30px;
-    align-items: center;
-    height: 20px;
-    margin-top: 60px;  
+.title {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100px;
 }
 
-.title h1{
-    color: black;
+.title h1 {
+    margin-top: 100px;
+    margin-right: 50px;
 }
+
 
 .wrapper{
     position: relative;
@@ -111,6 +110,8 @@ header{
     border-radius: 20px;
     backdrop-filter: blur(20px);
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+
+    align-self: center;
     margin-top: 100px;
 }
 
@@ -398,4 +399,87 @@ form {
 
 .imgContainer{
     transform: scale(0.7);
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    color: white;
+}
+
+.footer_link{
+    text-decoration: none;
+}
+
+#footer_content{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: black;
+    padding: 3rem 3.5rem;
+    border-radius: 20px;
+}
+
+#footer_contacts h1{
+    margin-bottom: 0.75rem;
+}
+
+#footer_social_media{
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+#footer_social_media .footer_link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: white;
+    border-radius: 50%;
+}
+
+#footer_social_media .footer_link:hover{
+    opacity: 0.8;
+}
+
+#Instagram{
+    background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+
+#Linkedin{
+    background-color: #0077B5;
+}
+
+.footer_coypright{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.email{
+    margin-left: 285px;
+    margin-bottom: 1.0rem;
+    margin-top: 30px;
+}
+
+.developer{
+    margin-left: 270px;
+    white-space: nowrap;
+}
+.Pokemon-footer {
+    position: absolute; /* Tira o elemento do fluxo, impedindo-o de expandir o rodapé */
+    bottom: 0;          /* Alinha o fundo do Dialga com o fundo do seu container pai */
+    right: 0;           /* Alinha o Dialga à direita do seu container pai */
+    /* width/height: 'auto' é geralmente seguro para elementos absolutos que não são necessários */
+}
+
+/* 3. AJUSTES FINOS NA IMAGEM (OPCIONAL) */
+.Pokemon-footer img {
+    margin-right: 20px; /* Adiciona um pequeno espaçamento da borda direita */
+    margin-bottom: 0;   /* Garante que esteja colado no fundo. Você pode usar um valor negativo se quiser que ele 'corte' um pouco a linha do chão. */
+    width: 250px;       /* Mantém o tamanho (ajuste se necessário) */
+    height: auto;       /* Garante que a altura seja proporcional */
 }
