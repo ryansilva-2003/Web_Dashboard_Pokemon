@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial;
+    font-family: 'Lato', sans-serif;
     
 }
 
@@ -382,4 +382,14 @@ form {
 
 .search-btn:hover {
   background-color: #000080;
+}
+
+.pokeContainer{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.Pokemon-home .imgContainer{
+    transform: scale(0.6);
 }
