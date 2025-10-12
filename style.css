@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial;
+    
 }
 
 body{
@@ -87,12 +89,17 @@ header{
     align-items: center;
     margin-bottom: 500px; 
 }
-.page-title-container h1 {
-    font-size: 4em; 
-    color: #FFCB05;
-    text-shadow: 3px 3px 0 #333; 
-    font-family: 'Arial Black', sans-serif;
-    text-align: center;
+
+.title{
+    display: flex;
+    margin-right: 30px;
+    align-items: center;
+    height: 20px;
+    margin-top: 60px;  
+}
+
+.title h1{
+    color: black;
 }
 
 .wrapper{
@@ -114,8 +121,10 @@ header{
 
 .form-box h2{
     font-size: 2em;
-    color: #162938;
-    text-align: center ;
+    color: black;
+    text-align: center;
+    margin-right: 80px;
+    margin-bottom: 10px;
 }
 
 form {
@@ -134,20 +143,230 @@ form {
 .input-box label{
     display: flex;
     flex-direction: column;
-    color: black;
-    margin-top: 20px;
+    color: transparent;
+    align-items: center;
+    justify-content: center;
 }
 
 .input-box input{
-    width: 250px;
-    height: 25px;
+    width: 310px;
+    height: 28px;
     border-radius: 6px;
+    border: 1px solid black;
 }
 
-.multi-select{
-    width: 100px;
-     padding: 5px 10px;
+.input-box input::placeholder {
+    color: gray;
+    text-align: center;
+    font-size: 16px; 
 }
+
+.select-btn{
+    display: flex;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 17px;
+    padding: 0 80px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+}
+.select-btn .btn-text{
+    font-size: 17px;
+    font-weight: 400;
+    color: gray;
+    font-family: Arial;
+}
+
+.select-btn.open + .list-items{
+    display: block;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.2s;
+    -webkit-animation-fill-mode: both;
+}
+
+.list-items{
+    display: none;
+    position: absolute;
+    max-width: 288px;
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation-name: fadeInDown;
+    -webkit-animation-name: fadeInDown;
+    animation-duration: 0.60s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.60s;
+    -webkit-animation-fill-mode: both;
+
+    max-height: 200px;  
+    overflow-y: scroll;  
+    z-index: 100;    
+}
+.list-items .item{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 0 15px;
+    border-radius: 8px;
+}
+.list-items .item:hover{
+    background-color: #DCDCDC;
+}
+
+.item .item-text{
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+}
+.item .checkbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 4px;
+    margin-right: 12px;
+    border: 1.5px solid black;
+}
+.item.checked .checkbox{
+    background-color: #4169E1;
+    border-color: #4169E1;
+}
+@keyframes fadeInUp{
+    from{
+        transform: translate3d(0, 30px 0);
+    }
+    to{
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+@keyframes fadeInDown {
+    from{
+        transform: translate3d(0, 0, 0);
+    }
+    to{
+        transform: translate3d(0, 20px, 0);
+        opacity: 0;
+    }
+}
+
+.selector{
+    display: flex;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 17px;
+    padding: 0 65px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+}
+.selector .btb-text{
+    font-size: 17px;
+    font-weight: 400;
+    color: gray;
+    font-family: Arial;
+}
+
+.selector.open + .list-items2{
+    display: block;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.2s;
+    -webkit-animation-fill-mode: both;
+}
+
+.list-items2{
+    display: none;
+    position: absolute;
+    max-width: 297px;
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation-name: fadeInDown;
+    -webkit-animation-name: fadeInDown;
+    animation-duration: 0.60s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.60s;
+    -webkit-animation-fill-mode: both;
+
+    max-height: 200px;  
+    overflow-y: scroll;  
+    z-index: 100;    
+}
+.list-items2 .iten{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 0 15px;
+    border-radius: 8px;
+}
+.list-items2 .iten:hover{
+    background-color: #DCDCDC;
+}
+
+.iten .iten-text{
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+}
+.iten .checkbox2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 4px;
+    margin-right: 12px;
+    border: 1.5px solid black;
+}
+.iten.checked .checkbox2{
+    background-color: #4169E1;
+    border-color: #4169E1;
+}
+@keyframes fadeInUp{
+    from{
+        transform: translate3d(0, 30px 0);
+    }
+    to{
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+@keyframes fadeInDown {
+    from{
+        transform: translate3d(0, 0, 0);
+    }
+    to{
+        transform: translate3d(0, 20px, 0);
+        opacity: 0;
+    }
+}
+    
 
 .search-btn{
     height: 30px;
@@ -158,7 +377,7 @@ form {
     border-radius: 6px;
     font-size: 0.9em;
     cursor: pointer;
-    margin-top: 35px;
+    margin-top: 18px;
 }
 
 .search-btn:hover {
