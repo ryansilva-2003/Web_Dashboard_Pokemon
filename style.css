@@ -1,3 +1,9 @@
+@font-face {
+    font-family: "MinhaFonte";
+    src: url('fonte/GROBOLD.ttf');
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -96,8 +102,18 @@ header{
 }
 
 .title h1 {
+    font-family: 'MinhaFonte', sans-serif;
+    color: #FFD700;
+    font-weight: 100;
+    font-size: 60px;
     margin-top: 100px;
     margin-right: 50px;
+
+    text-shadow:
+    -5px -5px 0 #4169E1,
+     5px -5px 0 #4169E1,
+    -5px  5px 0 #4169E1,
+     5px  5px 0 #4169E1;
 }
 
 
@@ -124,7 +140,7 @@ header{
     font-size: 2em;
     color: black;
     text-align: center;
-    margin-right: 80px;
+    margin-right: 20px;
     margin-bottom: 10px;
 }
 
@@ -451,6 +467,10 @@ form {
     background-color: #0077B5;
 }
 
+#Github{
+    background-color: #4F4F4F;
+}
+
 .footer_coypright{
     display: flex;
     flex-direction: column;
@@ -461,7 +481,7 @@ form {
 
 .email{
     margin-left: 285px;
-    margin-bottom: 4.0rem;
+    margin-bottom: 3.0rem;
     margin-top: 30px;
 }
 
