@@ -387,9 +387,15 @@ form {
 .pokeContainer{
     display: flex;
     flex-wrap: wrap;
-    
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
 }
 
-.Pokemon-home .imgContainer{
-    transform: scale(0.6);
+.pokemon-home{
+    background-color: white;
+}
+
+.imgContainer{
+    transform: scale(0.7);
 }
