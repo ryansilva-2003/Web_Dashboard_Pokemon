@@ -461,7 +461,7 @@ form {
 
 .email{
     margin-left: 285px;
-    margin-bottom: 1.0rem;
+    margin-bottom: 4.0rem;
     margin-top: 30px;
 }
 
@@ -470,16 +470,14 @@ form {
     white-space: nowrap;
 }
 .Pokemon-footer {
-    position: absolute; /* Tira o elemento do fluxo, impedindo-o de expandir o rodapé */
-    bottom: 0;          /* Alinha o fundo do Dialga com o fundo do seu container pai */
-    right: 0;           /* Alinha o Dialga à direita do seu container pai */
-    /* width/height: 'auto' é geralmente seguro para elementos absolutos que não são necessários */
+    position: absolute;
+    bottom: 0; 
+    right: 0;
 }
 
-/* 3. AJUSTES FINOS NA IMAGEM (OPCIONAL) */
 .Pokemon-footer img {
-    margin-right: 20px; /* Adiciona um pequeno espaçamento da borda direita */
-    margin-bottom: 0;   /* Garante que esteja colado no fundo. Você pode usar um valor negativo se quiser que ele 'corte' um pouco a linha do chão. */
-    width: 250px;       /* Mantém o tamanho (ajuste se necessário) */
-    height: auto;       /* Garante que a altura seja proporcional */
+    margin-right: 20px;
+    margin-bottom: 0; 
+    width: 250px; 
+    height: auto; 
 }
