@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "MinhaFonte1";
+    src: url('fonte/GROBOLD.ttf');
+}
+
 *{
     font-family: 'Lato', sans-serif;
     box-sizing: border-box;
@@ -6,15 +11,29 @@
 }
 
 body{
-    background: url('imagens/wallpaper.jpg') no-repeat;
+    background-color: rgba(223, 191, 191, 0.6);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-h1{
-    letter-spacing: 5px;
+.title {
+    display: flex; 
+    height: 100px;
+}
+
+.title h1 {
+    font-family: 'MinhaFonte1', sans-serif;
+    color: #FFD700;
+    font-weight: 100;
+    font-size: 60px;
+
+    text-shadow:
+    -5px -5px 0 #4169E1,
+     5px -5px 0 #4169E1,
+    -5px  5px 0 #4169E1,
+     5px  5px 0 #4169E1;
 }
 
 .pokeContainer{
@@ -27,5 +46,41 @@ h1{
 }
 
 .pokemon{
-    
+    background-color: #eee;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.pkdContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+}
+
+.pkdContainer .img{
+    max-width: 90%;
+}
+
+.info{
+    margin-top: 20px;
+}
+
+.number{
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0,8rem;
+}
+
+.name{
+    margin: 15px 0 7px;
+    letter-spacing: 1.5px;
 }
