@@ -19,7 +19,7 @@ body{
 }
 
 header{
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -94,7 +94,7 @@ header{
     color: #FFD700;
     font-weight: 100;
     font-size: 60px;
-    margin-top: 170px;
+    margin-top: 45px;
     margin-right: 50px;
 
     text-shadow:
@@ -104,6 +104,44 @@ header{
      5px  5px 0 #4169E1;
 }
 
+.input-box input{
+    width: 350px;
+    height: 30px;
+    margin-top: 80px;
+    margin-left: 10px;
+    border-radius: 3px;
+    border: 1px solid black;
+    font-size: 18px;
+    padding: 8px;
+
+}
+
+.input-box input::placeholder{
+    text-align: center;
+    justify-content: center;
+    color: gray;
+    font-size: 15px;
+}
+
+.wrapper{
+    position: relative;
+    width: 1300px;
+    height: 30900px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+
+    align-self: center;
+    margin-top: 20px;
+}
+
+.wrapper .form-box{
+    width: 100%;
+    padding: 40px;
+}
+
 .pokeContainer{
     display: flex;
     flex-wrap: wrap;
@@ -111,7 +149,7 @@ header{
     justify-content: space-between;
     margin: 0 auto;
     max-width: 1200px;
-    margin-top: 200px;
+    margin-top: 50px;
 }
 
 .pokemon{

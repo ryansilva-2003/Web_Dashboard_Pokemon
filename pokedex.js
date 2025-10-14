@@ -8,14 +8,14 @@ const colors = {
     electric: '#FFD700',
     water: '#6495ED',
     ground: '#DEB887',
-    rock: '#d5d5d4',
+    rock: '#F4A460',
     fairy: '#FF69B4',
     poison: '#BA55D3',
     bug: '#9ACD32',
     dragon: '#97b3e6',
     psychic: '#EE82EE',
     flying: '#B0E0E6',
-    fighting: '#E6E0D4',
+    fighting: '#A52A2A',
     normal: '#DCDCDC'
 };
 

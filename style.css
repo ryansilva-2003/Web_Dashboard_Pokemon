@@ -168,9 +168,11 @@ form {
 
 .input-box input{
     width: 310px;
-    height: 28px;
+    height: 35px;
     border-radius: 6px;
     border: 1px solid black;
+    padding: 8px;
+    font-size: 16px;
 }
 
 .input-box input::placeholder {
@@ -181,10 +183,10 @@ form {
 
 .select-btn{
     display: flex;
-    height: 30px;
+    height: 35px;
     align-items: center;
     justify-content: center;
-    margin-top: 17px;
+    margin-top: 18px;
     padding: 0 80px;
     border-radius: 8px;
     cursor: pointer;
@@ -284,10 +286,10 @@ form {
 
 .selector{
     display: flex;
-    height: 30px;
+    height: 35px;
     align-items: center;
     justify-content: center;
-    margin-top: 17px;
+    margin-top: 18px;
     padding: 0 65px;
     border-radius: 8px;
     cursor: pointer;
@@ -387,7 +389,7 @@ form {
     
 
 .search-btn{
-    height: 30px;
+    height: 35px;
     width: 70px;
     background: #4169E1;
     color: white;
