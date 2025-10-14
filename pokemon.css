@@ -14,14 +14,12 @@ body{
     background-color: rgb(65, 64, 63);
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
 
 header{
+    margin-bottom: 70px;
     position: relative;
-    top: 0;
-    left: 0;
     width: 100%;
     padding: 20px 100px;
     background: black;
@@ -87,6 +85,7 @@ header{
 .title {
     display: flex; 
     height: 100px;
+    margin: 0 auto 50px auto;
 }
 
 .title h1 {
@@ -94,7 +93,6 @@ header{
     color: #FFD700;
     font-weight: 100;
     font-size: 60px;
-    margin-top: 45px;
     margin-right: 50px;
 
     text-shadow:
@@ -104,29 +102,55 @@ header{
      5px  5px 0 #4169E1;
 }
 
-.input-box input{
+.wrapper-container{
+    width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.search-box {
+    gap: 10px;
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.search-box input{
     width: 350px;
     height: 30px;
-    margin-top: 80px;
     margin-left: 10px;
-    border-radius: 3px;
+    border-radius: 6px;
     border: 1px solid black;
     font-size: 18px;
     padding: 8px;
-
 }
 
-.input-box input::placeholder{
+.search-box input::placeholder{
     text-align: center;
     justify-content: center;
     color: gray;
     font-size: 15px;
 }
 
+.search-box button {
+    padding: 6px 30px;
+    border-radius: 6px;
+    border: 1px solid black;
+    background-color: #1E90FF;
+    color: white;
+    cursor: pointer;
+}
+
+.search-box button:hover{
+    background-color: #4169E1;
+}
+
 .wrapper{
-    position: relative;
     width: 1300px;
     height: 30900px;
+    margin: 0 auto 70px auto;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
@@ -134,7 +158,7 @@ header{
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
 
     align-self: center;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 .wrapper .form-box{
@@ -200,7 +224,8 @@ header{
     position: relative;
     width: 1350px;
     color: white;
-    margin-top: 80px;
+    margin: 0 auto;
+
 }
 
 .footer_link{
@@ -237,10 +262,6 @@ header{
 
 #footer_social_media .footer_link:hover{
     opacity: 0.8;
-}
-
-#Instagram{
-    background: linear-gradient(#7f37c9, #ff2992, #ff9807);
 }
 
 #Linkedin{

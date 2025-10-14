@@ -5,8 +5,6 @@
 
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
     
@@ -19,7 +17,7 @@ body{
     min-height: 100vh;
     background: url('imagens/wallpaper.jpg') no-repeat;
     padding-top: 105px;
-    margin: 0;
+    margin: 0 auto;
 }
 
 header{
@@ -100,6 +98,8 @@ header{
     justify-content: center; 
     align-items: center; 
     height: 100px;
+    margin-top: 50px;
+    margin-right: 25px;
 }
 
 .title h1 {
@@ -107,8 +107,6 @@ header{
     color: #FFD700;
     font-weight: 100;
     font-size: 60px;
-    margin-top: 100px;
-    margin-right: 50px;
 
     text-shadow:
     -5px -5px 0 #4169E1,
@@ -129,7 +127,7 @@ header{
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
 
     align-self: center;
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
 .wrapper .form-box{
@@ -141,35 +139,32 @@ header{
     font-size: 2em;
     color: black;
     text-align: center;
-    margin-right: 20px;
+    margin-right: 55px;
     margin-bottom: 10px;
 }
 
-form {
+Form {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 30px;
 }
 
 .search-form{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
 }
 
 .input-box label{
     display: flex;
     flex-direction: column;
     color: transparent;
-    align-items: center;
-    justify-content: center;
 }
 
 .input-box input{
     width: 310px;
     height: 35px;
-    border-radius: 6px;
+    border-radius: 8px;
     border: 1px solid black;
     padding: 8px;
     font-size: 16px;
@@ -417,7 +412,7 @@ form {
 }
 
 .imgContainer{
-    transform: scale(0.7);
+    transform: scale(0.6);
 }
 
 .footer {
@@ -462,10 +457,6 @@ form {
     opacity: 0.8;
 }
 
-#Instagram{
-    background: linear-gradient(#7f37c9, #ff2992, #ff9807);
-}
-
 #Linkedin{
     background-color: #0077B5;
 }
@@ -496,6 +487,10 @@ form {
     position: absolute;
     bottom: 0; 
     right: 0;
+}
+
+.imgContainer2{
+    transform: scale(0.7);
 }
 
 .Pokemon-footer img {

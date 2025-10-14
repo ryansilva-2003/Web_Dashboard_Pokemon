@@ -19,39 +19,32 @@
     </header>
 
         <div class="title">
-        <div class="title">
-        <h1>Pokédex</h1>
-        </div>
-        </div>
-    
-    <div class="input-box">
-        <div class="nomePokemon">
-            <input type="text" placeholder="Nome ou número">
+            <h1>Pokédex</h1>
         </div>
 
-    <div class="wrapper">
+    <div class="wrapper-container">
+        
+        <form action="searchForm">
+                <div class="search-box">
+                    <input type="text" placeholder="Nome ou número">
+                    <button type="submit" class="searchPokemon">Search</button>
+                </div>
+        </form>
 
-    <div class="pokeContainer" id="pokeContainer">
-
+        <div class="wrapper">
+            <div class="pokeContainer" id="pokeContainer"></div>
+        </div>
     </div>
 
        <footer class="footer">
-
         <div id="footer_content">
             <div id="footer_contacts">
                 <h1>Pokédex</h1>
 
-                <form action="pesquisa" method="GET">
-                    <button type="submit">Search</button>
-                </form>
 
                 <div id="footer_social_media">
                     <a href="https://www.linkedin.com/in/ryan-s-oliveira/" class="footer_link" id="Linkedin">
                         <i class="fa-brands fa-linkedin"></i>
-                    </a>
-
-                    <a href="https://www.instagram.com/ryannsdo/" class="footer_link" id="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
                     </a>
 
                     <a href="https://github.com/ryansilva-2003" class="footer_link" id="Github">
@@ -61,16 +54,11 @@
 
             </div>
 
-            <div class="footer_copyright" id="footer_copyright">
+        <div class="footer_copyright" id="footer_copyright">
                 <div class="email">
-                <p>
-                    ryansilvadeoliveira53@gmail.com
-                </p>
+                    <p>ryansilvadeoliveira53@gmail.com</p>
                 </div>
-                <div class=developer>
-                &#169
-                2025 . Desenvolvido por Ryan Silva
-            </div>
+            <div class="developer">&#169 2025 . Desenvolvido por Ryan Silva</div>
         </div>
 
     <div class="Pokemon-footer">
