@@ -1,0 +1,69 @@
+body{
+    background: url("imagens/wallpaper.jpg");
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.nav-links {
+    display: flex;
+    gap: 190px;
+    position: absolute;
+    top: 50%;              
+    left: 50%;          
+    transform: translate(-50%, -50%);
+}
+
+.btnHome-popup{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 50px;
+    background: white;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.3em;
+    color: black;
+    transition: .3s;
+}
+
+.btnHome-popup:hover{
+    background: gray;
+    color: black;
+}
+
+.btnPokedex-popup{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 50px;
+    background: white;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.3em;
+    color: black;
+    transition: .5s;
+}
+
+.btnPokedex-popup:hover{
+    background: gray;
+    color: black
+}

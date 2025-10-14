@@ -280,16 +280,25 @@ header{
     text-align: center;
 }
 
-.email{
-    margin-left: 285px;
+.cons{
+    text-align: center;
+    margin-left: 200px;
     margin-bottom: 3.0rem;
     margin-top: 30px;
 }
 
 .developer{
-    margin-left: 270px;
-    white-space: nowrap;
+    display: flex; 
+    gap: 50px; 
+    margin-left: 180px;
+    align-items: center;
 }
+
+.developer p{
+    white-space: nowrap;
+    margin: 0 auto;
+}
+
 .Pokemon-footer {
     position: absolute;
     bottom: 0; 
