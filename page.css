@@ -1,5 +1,13 @@
+*{
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+}
+
 body{
     background: url("imagens/wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 header{
@@ -67,3 +75,5 @@ header{
     background: gray;
     color: black
 }
+
+.title .h1
