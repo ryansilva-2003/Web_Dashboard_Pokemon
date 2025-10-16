@@ -40,6 +40,9 @@ const getPokemon = async (id) => {
 const createPokemonCard = (poke) => {
     const card = document.createElement('div');
     card.classList.add("pokemon");
+    card.addEventListener('click', () => {
+        window.location.href = `page.html?id=${poke.id}`;
+    })
 
     const rawName = poke.name.split("-")[0];
     const name = rawName[0].toUpperCase() + rawName.slice(1);
