@@ -95,3 +95,29 @@ header{
     margin-top: 30px;
     margin: 0 auto;
 }
+
+.pokemon-card {
+    display: inline-block;
+    text-align: center;
+    padding: 25px;
+    width: 320px;
+    margin: 50px auto;
+    color: #222;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pokemon-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.6);
+}
+
+.pokemon-card img {
+    width: 300px;
+    margin-bottom: 15px;
+}
+
+.pokemon-card p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+

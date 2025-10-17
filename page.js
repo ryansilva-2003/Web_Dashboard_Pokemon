@@ -1,4 +1,3 @@
-// Pega o ID do Pokémon da URL
 const urlParams = new URLSearchParams(window.location.search);
 const pokemonId = urlParams.get('id');
 
@@ -19,7 +18,7 @@ const colors = {
     fairy: '#ffa3ff',
     poison: '#bf8fc6',
     bug: '#9ACD32',
-    dragon: '#97b3e6',
+    dragon: '#4122d7',
     psychic: '#ed63a2',
     flying: '#B0E0E6',
     fighting: '#A52A2A',
@@ -36,22 +35,19 @@ const fetchPokemon = async (id) => {
 };
 
 const showPokemon = (poke) => {
-    // Nome e ID
     const rawName = poke.name.split('-')[0];
     const name = rawName[0].toUpperCase() + rawName.slice(1);
     const id = poke.id.toString().padStart(3, '0');
 
     title.textContent = name;
 
-    // Tipo e cor
     const pokeTypes = poke.types.map(t => t.type.name);
     const type = mainTypes.find(t => pokeTypes.indexOf(t) > -1);
     const color = colors[type] || '#fff';
 
-    // HTML do Pokémon
     wrapper.innerHTML = `
-        <div class="pokemon-card" style="background-color:${color}; padding:20px; border-radius:15px; text-align:center;">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${poke.id}.png" alt="${name}" width="200">
+        <div class="pokemon-card">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${poke.id}.png" alt="${name}">
             <p><strong>ID:</strong> #${id}</p>
             <p><strong>Tipo:</strong> ${pokeTypes.join(', ')}</p>
             <p><strong>Altura:</strong> ${poke.height / 10} m</p>
