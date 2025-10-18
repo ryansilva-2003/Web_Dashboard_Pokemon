@@ -43,18 +43,6 @@ const fetchPokemon = async (id) => {
 
     const speciesResp = await fetch(data.species.url);
     const speciesData = await speciesResp.json();
-    const colors = poke.types.map(t => typeColors[t.type.name]);
-
-    let boxShadowStyle;
-    if (colors.length > 1){
-        boxShadowStyle = `
-        0 0 25px ${colors[0]},
-        0 0 25px ${colors[1]}
-        `;
-    } else {
-        boxShadowStyle = `0 0 35px ${colors[0]}`;
-    }
-
 
     const generation = speciesData.generation.name;
     showPokemon(data, generation);
