@@ -26,11 +26,11 @@ const colors = {
 };
 
 const generationMap = {
-    "generation-i": "Geração 1",
-    "generation-ii": "Geração 2",
-    "generation-iii": "Geração 3",
-    "generation-iv": "Geração 4",
-    "generation-v": "Geração 5"
+    "generation-i": "Geração I",
+    "generation-ii": "Geração II",
+    "generation-iii": "Geração III",
+    "generation-iv": "Geração IV",
+    "generation-v": "Geração V"
 }
 
 const mainTypes = Object.keys(colors);
@@ -43,6 +43,18 @@ const fetchPokemon = async (id) => {
 
     const speciesResp = await fetch(data.species.url);
     const speciesData = await speciesResp.json();
+    const colors = poke.types.map(t => typeColors[t.type.name]);
+
+    let boxShadowStyle;
+    if (colors.length > 1){
+        boxShadowStyle = `
+        0 0 25px ${colors[0]},
+        0 0 25px ${colors[1]}
+        `;
+    } else {
+        boxShadowStyle = `0 0 35px ${colors[0]}`;
+    }
+
 
     const generation = speciesData.generation.name;
     showPokemon(data, generation);
@@ -58,19 +70,24 @@ const showPokemon = (poke, generation) => {
     const pokeTypes = poke.types.map(t => t.type.name);
     const genName = generationMap[generation] || generation;
 
+    const typeHTML = pokeTypes
+    .map(type => `<span class="type ${type}">${type}</span>`)
+    .join('');
+
     wrapper.innerHTML = `
     <div class="pokemon-card">
         <div class="pokemon-img">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${poke.id}.png" alt="${name}">
         </div>
         <div class="pokemon-info">
-            <p><strong>Nome:</strong> ${name}</p>
-            <p><strong>ID:</strong> #${id}</p>
-            <p><strong>Geração:</strong> ${genName}</p>
-            <p><strong>Tipo:</strong> <a>${pokeTypes.join(', ')}</a></p>
-            <p><strong>Altura:</strong> ${poke.height / 10} m</p>
-            <p><strong>Peso:</strong> ${poke.weight / 10} kg</p>
-            <p><strong>Habilidades:</strong> ${poke.abilities.map(a => a.ability.name).join(', ')}</p>
+            <h2><strong>Pokédex Data</strong></h2>
+            <b><strong><em>${genName}</em></strong></b>
+            <p><strong>National ID:</strong><em> #${id}</em></p>
+            <p><strong>Nome:</strong><em> ${name}</em></p>
+            <p><strong>Tipo:</strong> ${typeHTML}</p>
+            <p><strong>Altura:</strong></em> ${poke.height / 10} m</em></p>
+            <p><strong>Peso:</strong><em> ${poke.weight / 10} kg</em></p>
+            <p><strong>Habilidades:</strong><em> ${poke.abilities.map(a => a.ability.name).join(', ')}</em></p>
         </div>
     </div>
     `;
