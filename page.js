@@ -39,16 +39,50 @@ const fetchPokemon = async (id) => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
     const resp = await fetch(url);
     const data = await resp.json();
-    showPokemon(data);
 
     const speciesResp = await fetch(data.species.url);
     const speciesData = await speciesResp.json();
 
+    let ptEntries = speciesData.flavor_text_entries.filter(entry => entry.language.name === 'pt');
+
+    if (ptEntries.length > 0) {
+            flavorText = ptEntries[ptEntries.length - 1].flavor_text.replace(/\n|\f/g, ' ');
+        } else {
+    let enEntries = speciesData.flavor_text_entries.filter(
+        entry => entry.language.name === 'en'
+    );
+    flavorText = enEntries.length > 0
+        ? enEntries[enEntries.length - 1].flavor_text.replace(/\n|\f/g, ' ')
+        : 'Texto da Pokédex indisponível';
+}
+    
     const generation = speciesData.generation.name;
-    showPokemon(data, generation);
+
+    const fetchEvolutions = async (speciesUrl) => {
+    const speciesResp = await fetch(speciesUrl);
+    const speciesData = await speciesResp.json();
+
+    const evolutionUrl = speciesData.evolution_chain.url;
+    const evolutionResp = await fetch(evolutionUrl);
+    const evolutionData = await evolutionResp.json();
+
+    const evolutions = [];
+    const traverseChain = (chain) => {
+        evolutions.push(chain.species.name);
+        if (chain.evolves_to.length > 0) {
+            chain.evolves_to.forEach(e => traverseChain(e));
+        }
+    };
+
+    traverseChain(evolutionData.chain);
+    return evolutions;
+};
+    const evolutions = await fetchEvolutions(data.species.url);
+
+    showPokemon(data, generation, flavorText, evolutions);
 };
 
-const showPokemon = (poke, generation) => {
+    const showPokemon = async (poke, generation, flavorText, evolutions) => {
     const rawName = poke.name.split('-')[0];
     const name = rawName[0].toUpperCase() + rawName.slice(1);
     const id = poke.id.toString().padStart(3, '0');
@@ -61,6 +95,24 @@ const showPokemon = (poke, generation) => {
     const typeHTML = pokeTypes
     .map(type => `<span class="type ${type}">${type}</span>`)
     .join('');
+
+    
+    const evolutionsHTML = await Promise.all(
+        evolutions.map(async evoName => {
+            const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${evoName}`);
+            const evoData = await res.json();
+            const evoDisplayName = evoName[0].toUpperCase() + evoName.slice(1);
+            return `
+            <div class="evolution">
+                <a href="page.html?id=${evoData.id}" target="_blank">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${evoData.id}.png" alt="${evoDisplayName}"></a>
+                <p>${evoDisplayName}</p>
+            </div>
+        `;
+    })
+);
+
+
 
     wrapper.innerHTML = `
     <div class="pokemon-card">
@@ -77,6 +129,15 @@ const showPokemon = (poke, generation) => {
             <p><strong>Peso:</strong><em> ${poke.weight / 10} kg</em></p>
             <p><strong>Habilidades:</strong><em> ${poke.abilities.map(a => a.ability.name).join(', ')}</em></p>
         </div>
+    </div>
+
+    <div class="text">
+        <p><strong>Descrição:</strong><em> ${flavorText}</em></p>
+    </div>
+
+    <div class="evolutions-wrapper">
+        <h3>Evoluções:</h3>
+        <div class="evolutions">${evolutionsHTML.join('')}</div>
     </div>
     `;
 };

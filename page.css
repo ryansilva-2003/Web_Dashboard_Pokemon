@@ -116,7 +116,7 @@ header{
 }
 
 .pokemon-img img:hover {
-    transform: scale(0.8);
+    transform: scale(0.9);
     box-shadow: 0 3px 15px;
 }
 
@@ -149,22 +149,53 @@ header{
 }
 
 .type.fire { background-color: #e75c50; }
-.type.water { background-color: #6890f0; }
+.type.water { background-color: #7eaff9; }
 .type.grass { background-color: #52ab83; }
 .type.poison { background-color: #bf8fc6; }
 .type.electric { background-color: #ffeb6a; color: #000; }
-.type.flying { background-color: #a98ff3; }
+.type.flying { background-color: #B0E0E6; }
 .type.psychic { background-color: #ed63a2; }
 .type.ice { background-color: #2fdbea; }
-.type.rock { background-color: #b8a038; }
-.type.ground { background-color: #e0c068; }
-.type.fighting { background-color: #c03028; }
-.type.bug { background-color: #a8b820; }
-.type.ghost { background-color: #705898; }
-.type.dragon { background-color: #7038f8; }
-.type.dark { background-color: #705848; }
-.type.steel { background-color: #b8b8d0; }
-.type.fairy { background-color: #ee99ac; }
-.type.normal { background-color: #a8a878; }
+.type.rock { background-color: #F4A460; }
+.type.ground { background-color: #DEB887; }
+.type.fighting { background-color: #A52A2A; }
+.type.bug { background-color: #9ACD32; }
+.type.ghost { background-color: #6954a4; }
+.type.dragon { background-color: #4122d7; }
+.type.dark { background-color: #5c4235; }
+.type.steel { background-color: #8a97b2; }
+.type.fairy { background-color: #ffa3ff; }
+.type.normal { background-color: #DCDCDC; }
 
+.text{
+    margin-left: 20px;
+    font-size: 2em;
+}
 
+.evolutions-wrapper h3{
+    margin-left: 20px;
+}
+
+.evolution{
+    display: inline-block;
+    margin-left: 50px;
+    border: 5px solid black;
+    border-radius: 50px;
+    border-color: transparent;
+    transition: transform 0.3s ease-out, box-shadow 0.2s ease-out;
+}
+
+.evolution:hover{
+    transform: scale(0.9);
+    box-shadow: 0 2px 10px;
+}
+
+.evolution img{
+    width: 130px;
+}
+
+.evolution p{
+    text-align: center;
+    margin-top: 5px;
+    font-weight: bold;
+}
