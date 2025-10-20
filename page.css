@@ -84,7 +84,8 @@ header{
 
 .titleP{
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    font-size: 20px;
     font-family: 'MinhaFonte2', sans-serif;
 }
 
@@ -117,7 +118,7 @@ header{
     border-radius: 30%;
     display: inline-block;
     text-align: center;
-    padding: 50px;
+    padding: 60px;
     width: 500px;
     margin: 10px auto;
     margin-left: 60px;
@@ -134,7 +135,7 @@ header{
 
 .pokemon-info {
     margin-bottom: 15px;
-    margin-left: 130px;
+    margin-left: 180px;
 }
 
 .pokemon-info h2 {
