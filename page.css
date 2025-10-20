@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "MinhaFonte2";
+    src: url('fonte/GROBOLD.ttf');
+}
+
 *{
     font-family: 'Lato', sans-serif;
     box-sizing: border-box;
@@ -47,7 +52,7 @@ header{
     cursor: pointer;
     font-size: 1.3em;
     color: black;
-    transition: .3s;
+    transition: .2s;
 }
 
 .btnHome-popup:hover{
@@ -69,7 +74,7 @@ header{
     cursor: pointer;
     font-size: 1.3em;
     color: black;
-    transition: .5s;
+    transition: .2s;
 }
 
 .btnPokedex-popup:hover{
@@ -79,12 +84,14 @@ header{
 
 .titleP{
     text-align: center;
+    margin-bottom: 50px;
+    font-family: 'MinhaFonte2', sans-serif;
 }
 
 .wrapper-page{
     position: relative;
     width: 1400px;
-    height: 1000px;
+    height: 1055px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .5);
     box-shadow: 0 0 30px black;
@@ -94,6 +101,10 @@ header{
     align-self: center;
     margin-top: 30px;
     margin: 0 auto;
+}
+
+.form-wrapper{
+    padding-bottom: 40px;
 }
 
 .pokemon-card{
@@ -113,6 +124,7 @@ header{
     margin-top: 50px;
     color: #222;
     transition: transform 0.4s ease, box-shadow 0.2s ease;
+    background-color: rgba(255, 255, 255, 0.356);
 }
 
 .pokemon-img img:hover {
@@ -137,6 +149,7 @@ header{
     margin: 18px 0;
     font-size: 1.7em;
 }
+
 
 .type {
   display: inline-block;
@@ -172,6 +185,12 @@ header{
     font-size: 2em;
 }
 
+.Container-evolveStats {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 .evolutions-wrapper h3{
     margin-left: 20px;
 }
@@ -198,4 +217,127 @@ header{
     text-align: center;
     margin-top: 5px;
     font-weight: bold;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 20px; 
+  width: 100%;
+  box-sizing: border-box;
+  margin-right: 180px;
+}
+
+.stat {
+    margin-bottom: 20px;
+}
+
+.stat-name{
+    font-weight: bold;
+}
+
+.stat-bar{
+    background-color: #e2e3d9;
+    width: 200px;
+    height: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.stat-fill{
+    width: 100%;
+    height: 10px;
+    background-color: #FFD700;
+}
+
+.footer {
+    position: relative;
+    width: 1350px;
+    color: white;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.footer_link{
+    text-decoration: none;
+}
+
+#footer_content{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: black;
+    padding: 3rem 3.5rem;
+    border-radius: 20px;
+}
+
+#footer_contacts h1{
+    margin-bottom: 0.75rem;
+}
+
+#footer_social_media{
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+#footer_social_media .footer_link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: white;
+    border-radius: 50%;
+}
+
+#footer_social_media .footer_link:hover{
+    opacity: 0.8;
+}
+
+#Linkedin{
+    background-color: #0077B5;
+}
+
+#Github{
+    background-color: #4F4F4F;
+}
+
+.footer_coypright{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.info{
+    text-align: center;
+    margin-left: 200px;
+    margin-bottom: 3.0rem;
+    margin-top: 30px;
+}
+
+.developer{
+    display: flex; 
+    gap: 50px; 
+    margin-left: 180px;
+    align-items: center;
+}
+
+.developer p{
+    white-space: nowrap;
+    margin: 0 auto;
+}
+
+.Pokemon-footer {
+    position: absolute;
+    bottom: 0; 
+    right: 30px;
+}
+
+.Pokemon-footer img {
+    margin-right: 20px;
+    margin-bottom: 30px; 
+    width: 160px; 
+    height: auto; 
 }

@@ -30,7 +30,11 @@ const generationMap = {
     "generation-ii": "Geração II",
     "generation-iii": "Geração III",
     "generation-iv": "Geração IV",
-    "generation-v": "Geração V"
+    "generation-v": "Geração V",
+    "generation-vi": "Geração VI",
+    "generation-vii": "Geração VII",
+    "generation-viii": "Geração VIII",
+    "generation-ix": "Geração IX"
 }
 
 const mainTypes = Object.keys(colors);
@@ -112,6 +116,21 @@ const fetchPokemon = async (id) => {
     })
 );
 
+const statsHTML = poke.stats.map(stat => {
+    const statName = stat.stat.name.toUpperCase();
+    const statValue = stat.base_stat;
+    const barWidth = (statValue / 255) * 100; 
+    return `
+      <div class="stat">
+        <span class="stat-name">${statName}</span>
+        <div class="stat-bar">
+          <div class="stat-fill" style="width: ${barWidth}%;"></div>
+        </div>
+        <span> ${statValue}</span>
+      </div>
+    `;
+}).join('');
+
 
 
     wrapper.innerHTML = `
@@ -121,13 +140,21 @@ const fetchPokemon = async (id) => {
         </div>
         <div class="pokemon-info">
             <h2><strong>Pokédex Data</strong></h2>
+            <hr>
             <b><strong><em>${genName}</em></strong></b>
+            <hr>
             <p><strong>National ID:</strong><em> #${id}</em></p>
+            <hr>
             <p><strong>Nome:</strong><em> ${name}</em></p>
+            <hr>
             <p><strong>Tipo:</strong> ${typeHTML}</p>
+            <hr>
             <p><strong>Altura:</strong></em> ${poke.height / 10} m</em></p>
+            <hr>
             <p><strong>Peso:</strong><em> ${poke.weight / 10} kg</em></p>
+            <hr>
             <p><strong>Habilidades:</strong><em> ${poke.abilities.map(a => a.ability.name).join(', ')}</em></p>
+            <hr>
         </div>
     </div>
 
@@ -135,10 +162,18 @@ const fetchPokemon = async (id) => {
         <p><strong>Descrição:</strong><em> ${flavorText}</em></p>
     </div>
 
-    <div class="evolutions-wrapper">
-        <h3>Evoluções:</h3>
-        <div class="evolutions">${evolutionsHTML.join('')}</div>
+    <div class="Container-evolveStats">
+        <div class="evolutions-wrapper">
+            <h3>Evoluções:</h3>
+            <div class="evolutions">${evolutionsHTML.join('')}</div>
+        </div>
+
+        <div class="stats-wrapper">
+            <h3>Estatísticas:</h3>
+            <div class="stats">${statsHTML}</div>
+        </div>
     </div>
+
     `;
 };
 

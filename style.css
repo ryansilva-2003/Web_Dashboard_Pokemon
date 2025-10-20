@@ -60,7 +60,7 @@ header{
     cursor: pointer;
     font-size: 1.3em;
     color: black;
-    transition: .3s;
+    transition: .2s;
 }
 
 .btnHome-popup:hover{
@@ -82,7 +82,7 @@ header{
     cursor: pointer;
     font-size: 1.3em;
     color: black;
-    transition: .5s;
+    transition: .2s;
 }
 
 .btnPokedex-popup:hover{
