@@ -1,5 +1,27 @@
 const pokeContainer = document.querySelector("#pokeContainer");
+const searchInput = document.getElementById('search');
+const form= document.querySelector("form");
 const pokemonCount = 1025;
+
+
+form.addEventListener('submit', async (e) => {
+
+    const value = searchInput.value.trim().toLowerCase();
+    if(!value) return;
+
+    try{
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${value}`);
+        if (!response.ok){
+            alert('Pokémon não encontrado!');
+            return;
+        }
+        const data = await response.json();
+        window.location.href = `page.html?id=${data.id}`;
+    } catch (error) {
+    console.error(error);
+    alert('Erro ao buscar Pokémon. Tente novamente.');
+    }
+});
 
 const colors = {
     fire: '#e75c50',

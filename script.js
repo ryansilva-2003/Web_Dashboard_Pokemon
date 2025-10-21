@@ -1,3 +1,25 @@
+const totalPokemons = 809;
+
+function getRandomPokemonId() {
+    return Math.floor(Math.random() * totalPokemons) + 1;
+}
+
+function loadRandomPokemons() {
+    const ids = [];
+    while (ids.length < 3) {
+        const id = getRandomPokemonId();
+        if (!ids.includes(id)) ids.push(id);
+    }
+
+    for (let i = 1; i <= 3; i++) {
+        const img = document.getElementById(`id${i}`);
+        const link = img.parentElement;
+        img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${ids[i-1]}.png`;
+        link.href = `page.html?id=${ids[i-1]}`;
+    }
+}
+
+window.onload = loadRandomPokemons;
 
 const selectBtn = document.querySelector(".select-btn");
 const typeItems = document.querySelectorAll(".item");
@@ -5,6 +27,7 @@ const btnText = document.querySelector(".btn-text");
 
 selectBtn.addEventListener("click", () => {
     selectBtn.classList.toggle("open");
+
 });
 
 typeItems.forEach(item => {

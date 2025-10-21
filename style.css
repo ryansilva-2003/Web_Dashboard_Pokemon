@@ -37,6 +37,17 @@ header{
     z-index: 99;
 }
 
+.navbar img{
+    cursor: pointer;
+    border-radius: 100%;
+    transition: 0.2s;
+}
+
+.navbar img:hover {
+    transform: rotate(-20deg);
+    box-shadow: 0 0 40px red;
+}
+
 .nav-links {
     display: flex;
     gap: 190px;
@@ -65,7 +76,8 @@ header{
 
 .btnHome-popup:hover{
     background: gray;
-    color: black;
+    color: white;
+    box-shadow: 0 0 20px white;
 }
 
 .btnPokedex-popup{
@@ -87,7 +99,8 @@ header{
 
 .btnPokedex-popup:hover{
     background: gray;
-    color: black
+    color: white;
+    box-shadow: 0 0 20px white;
 }
 
 .page-title-container {
@@ -418,6 +431,12 @@ Form {
 
 .imgContainer{
     transform: scale(0.6);
+    cursor: pointer;
+}
+
+.imgContainer:hover{
+    border-radius: 50px;
+    box-shadow: 0 0 15px white;
 }
 
 .footer {
