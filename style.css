@@ -44,7 +44,7 @@ header{
 }
 
 .navbar img:hover {
-    transform: rotate(-20deg);
+    transform: rotate(-30deg);
     box-shadow: 0 0 40px red;
 }
 
@@ -530,5 +530,5 @@ Form {
     margin-right: 20px;
     margin-bottom: 0; 
     width: 220px; 
-    height: auto; 
+    height: auto;
 }
