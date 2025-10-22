@@ -39,7 +39,7 @@ header{
 }
 
 .navbar img:hover{
-    transform: rotate(-31deg);
+    transform: rotate(-30deg);
     box-shadow: 0 0 40px red;
 }
 
