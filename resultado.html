@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon</title>
+    <link rel="stylesheet" href="resultado.css">
+</head>
+<body>
+
+        <header class="header">
+            <nav class="navbar">
+                <a href="index.html">
+                <img width="80" height="80" alt="pokebola" src="imagens/pokeball2.png"/></a>
+                    <div class="nav-links">
+                        <a href="index.html" class="btnHome-popup">Home</a>
+                        <a href="pokemon.html" class="btnPokedex-popup">Pokémon</a>
+                    </div>
+            </nav>
+        </header>
+
+            <div class="wrapper-container">
+        
+        <form action="searchForm">
+                <div class="search-box">
+                    <input type="text" placeholder="Nome ou número" id="search">
+                    <button type="submit" class="searchPokemon">Search</button>
+                </div>
+        </form>
+
+        <div class="wrapper">
+            <div class="pokeContainer" id="pokeContainer"></div>
+        </div>
+    </div>
+    
+
+
+    <script src="resultado.js"></script>
+</body>
+</html>

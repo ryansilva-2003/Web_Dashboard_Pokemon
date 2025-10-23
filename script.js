@@ -54,3 +54,50 @@ genItems.forEach(iten => {
     });
 });
 
+const form = document.querySelector('form');
+const input = document.querySelector('#pokemon-name');
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const searchValue = input.value.trim().toLowerCase();
+
+    const selectedTypes = Array.from(document.querySelectorAll('.item.checked'))
+        .map(item => item.querySelector('.item-text').textContent.toLowerCase());
+
+    const selectedGens = Array.from(document.querySelectorAll('.iten.checked'))
+        .map(item => item.querySelector('.iten-text').textContent.match(/\d+/)[0]);
+
+
+    if (searchValue) {
+        try {
+            const url = isNaN(searchValue)
+                ? `https://pokeapi.co/api/v2/pokemon/${searchValue}`
+                : `https://pokeapi.co/api/v2/pokemon/${Number(searchValue)}`;
+
+            const response = await fetch(url);
+            if (!response.ok) throw new Error('Pokémon não encontrado');
+
+            const data = await response.json();
+
+            window.location.href = `page.html?id=${data.id}`;
+            return;
+        } catch (err) {
+            alert('Pokémon não encontrado. Tente novamente!');
+            return;
+        }
+    }
+
+    if (selectedTypes.length > 0 || selectedGens.length > 0) {
+        const query = new URLSearchParams();
+        if (selectedTypes.length > 0) query.append('type', selectedTypes.join(','));
+        if (selectedGens.length > 0) query.append('gen', selectedGens.join(','));
+
+        window.location.href = `resultado.html?${query.toString()}`;
+        return;
+    }
+
+    alert('Digite o nome/número ou selecione tipo/geração para pesquisar.');
+});
+
+

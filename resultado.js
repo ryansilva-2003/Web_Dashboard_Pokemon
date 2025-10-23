@@ -1,27 +1,8 @@
 const pokeContainer = document.querySelector("#pokeContainer");
-const searchInput = document.getElementById('search');
-const form= document.querySelector("form");
+const urlParams = new URLSearchParams(window.location.search);
+const typeFilter = urlParams.get('type');
+const genFilter = urlParams.get('gen');
 const pokemonCount = 1025;
-
-
-form.addEventListener('submit', async (e) => {
-
-    const value = searchInput.value.trim().toLowerCase();
-    if(!value) return;
-
-    try{
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${value}`);
-        if (!response.ok){
-            alert('Pokémon não encontrado!');
-            return;
-        }
-        const data = await response.json();
-        window.location.href = `page.html?id=${data.id}`;
-    } catch (error) {
-    console.error(error);
-    alert('Erro ao buscar Pokémon. Tente novamente.');
-    }
-});
 
 const colors = {
     fire: '#e75c50',
@@ -44,19 +25,32 @@ const colors = {
     normal: '#DCDCDC'
 };
 
-const mainTypes = Object.keys(colors);
-
 const fetchPokemons = async () => {
-    for (let i = 1; i <= pokemonCount; i++) {
-        await getPokemon(i);
-    }
+  for (let i = 1; i <= pokemonCount; i++) {
+    await getPokemon(i);
+  }
 };
 
 const getPokemon = async (id) => {
-    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
-    const resp = await fetch(url);
-    const data = await resp.json();
-    createPokemonCard(data);
+  const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+  const data = await resp.json();
+
+
+  if (typeFilter) {
+    const types = data.types.map(t => t.type.name);
+    const allowedTypes = typeFilter.split(',');
+    if (!types.some(t => allowedTypes.includes(t))) return;
+  }
+
+  if (genFilter) {
+    const speciesResp = await fetch(data.species.url);
+    const speciesData = await speciesResp.json();
+    const genNumber = speciesData.generation.name.replace('generation-', '');
+    const allowedGens = genFilter.split(',');
+    if (!allowedGens.includes(genNumber)) return;
+  }
+
+  createPokemonCard(data);
 };
 
 const createPokemonCard = (poke) => {
@@ -64,7 +58,7 @@ const createPokemonCard = (poke) => {
     card.classList.add("pokemon");
     card.addEventListener('click', () => {
         window.location.href = `page.html?id=${poke.id}`;
-    })
+    });
 
     const rawName = poke.name.split("-")[0];
     const name = rawName[0].toUpperCase() + rawName.slice(1);
@@ -73,11 +67,11 @@ const createPokemonCard = (poke) => {
     const types = poke.types.map(t => t.type.name);
     const typeText = types.join(", ");
     const type = types[0];
-    const color = colors[type];
+    const color = colors[type] || "#eee";
 
     card.style.backgroundColor = color;
 
-    const pokemonInnerHTML = `
+    card.innerHTML = `
         <div class="pkdContainer">
             <img width="85" height="85" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${poke.id}.png" alt="${name}">
         </div>
@@ -89,8 +83,9 @@ const createPokemonCard = (poke) => {
         </div>
     `;
 
-    card.innerHTML = pokemonInnerHTML;
     pokeContainer.appendChild(card);
 };
 
 fetchPokemons();
+
+
