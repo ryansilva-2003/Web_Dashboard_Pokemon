@@ -66,7 +66,8 @@ form.addEventListener('submit', async (e) => {
         .map(item => item.querySelector('.item-text').textContent.toLowerCase());
 
     const selectedGens = Array.from(document.querySelectorAll('.iten.checked'))
-        .map(item => item.querySelector('.iten-text').textContent.match(/\d+/)[0]);
+        .map(item => item.querySelector('.iten-text')?.textContent.match(/\d+/)?.[0])
+        .filter(Boolean);
 
 
     if (searchValue) {

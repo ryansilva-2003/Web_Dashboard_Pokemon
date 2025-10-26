@@ -120,7 +120,7 @@ input.addEventListener("input", () => {
 
   const filtered = allPokemons.filter(name => name.startsWith(query));
 
-  filtered.slice(0, 5).forEach(name => {
+  filtered.slice(0, 8).forEach(name => {
     const li = document.createElement("li");
     li.textContent = name;
     li.addEventListener("click", () => {

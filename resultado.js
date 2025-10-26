@@ -45,8 +45,9 @@ const getPokemon = async (id) => {
   if (genFilter) {
     const speciesResp = await fetch(data.species.url);
     const speciesData = await speciesResp.json();
-    const genNumber = speciesData.generation.name.replace('generation-', '');
-    const allowedGens = genFilter.split(',');
+
+    const genNumber = Number(speciesData.generation.name.replace('generation-', ''));
+    const allowedGens = genFilter.split(',').map(Number);
     if (!allowedGens.includes(genNumber)) return;
   }
 
