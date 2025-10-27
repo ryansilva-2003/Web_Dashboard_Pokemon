@@ -116,6 +116,7 @@ header{
     align-items: center; 
     height: 100px;
     margin-top: 50px;
+    margin-right: 40px;
 }
 
 .title h1 {
@@ -144,7 +145,7 @@ header{
     margin-bottom: 100px;
     
     align-self: center;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .wrapper .form-box{
@@ -251,7 +252,7 @@ Form {
     -webkit-animation-duration: 0.60s;
     -webkit-animation-fill-mode: both;
 
-    max-height: 200px;  
+    max-height: 250px;  
     overflow-y: scroll;  
     z-index: 100;    
 }
