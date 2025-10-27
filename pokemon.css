@@ -176,9 +176,9 @@ header{
 }
 
 .search-box button {
-    padding: 6px 30px;
+    padding: 7px 30px;
     border-radius: 6px;
-    border: 1px solid black;
+    border: none;
     background-color: #1E90FF;
     color: white;
     cursor: pointer;

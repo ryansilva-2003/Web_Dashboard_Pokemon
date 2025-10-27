@@ -101,4 +101,34 @@ form.addEventListener('submit', async (e) => {
     alert('Digite o nome/número ou selecione tipo/geração para pesquisar.');
 });
 
+const suggestion = document.getElementById("suggestion");
 
+let allPokemons = [];
+
+async function loadPokemons() {
+  const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1025");
+  const data = await response.json();
+  allPokemons = data.results.map(pokemon => pokemon.name);
+}
+
+
+loadPokemons ();
+
+input.addEventListener("input", () => {
+    const query = input.value.toLowerCase();
+    suggestion.innetHTML = "";
+
+    if (query.length == 0) return;
+    
+    const filtered = allPokemons.filter (name => name.startsWith(query));
+
+    filtered.slice(0,10).forEach(name => {
+        const li = document.createElement("li");
+        li.textContent = name;
+        li.addEventListener("click", () => {
+            input.value = name;
+            suggestion.innerHTML = "";
+        });
+        suggestion.appendChild(li);
+    });
+});

@@ -402,9 +402,8 @@ Form {
     
 
 .search-btn{
-    height: 35px;
-    width: 70px;
-    background: #4169E1;
+    padding: 7px 30px;
+    background: #1E90FF;
     color: white;
     border: none;
     border-radius: 6px;
@@ -414,7 +413,7 @@ Form {
 }
 
 .search-btn:hover {
-  background-color: #000080;
+  background-color: #4169E1;
 }
 
 .pokeContainer{
