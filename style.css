@@ -449,7 +449,7 @@ Form {
 
 .footer {
     position: relative;
-    width: 1510px;
+    width: 1500px;
     color: white;
     margin: 0 auto;
 }
@@ -533,8 +533,4 @@ Form {
 
 .Pokemon-footer img {
     margin-right: 20px;
-    margin-bottom: 30px; 
-    width: 160px; 
-    height: auto;
-    transform: scale(1.6);
 }

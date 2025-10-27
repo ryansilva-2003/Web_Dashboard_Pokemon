@@ -190,6 +190,7 @@ header{
     border-radius: 20px;
     backdrop-filter: blur(4px) brightness(93%);
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    margin-bottom: 60px;
 
     align-self: center;
     margin-top: 5px;
@@ -264,7 +265,7 @@ header{
 
 .footer {
     position: relative;
-    width: 1310px;
+    width: 1300px;
     color: white;
     margin: 0 auto;
 }
