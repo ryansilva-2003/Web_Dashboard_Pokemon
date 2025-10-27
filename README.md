@@ -39,5 +39,6 @@ Como os dados são obtidos de uma API pública (PokéAPI), eventuais instabilida
 <hr>
 
 ![page-pk](https://github.com/user-attachments/assets/bb753b37-8ce0-4e35-960f-88f85f3531cc)
-
-
+<hr>
+<h3>Autor</h3>
+Projeto desenvolvido por Ryan.
