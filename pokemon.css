@@ -45,7 +45,7 @@ header{
 
 .nav-links {
     display: flex;
-    gap: 190px;
+    gap: 300px;
     position: absolute;
     top: 50%;              
     left: 50%;          
@@ -109,7 +109,6 @@ header{
     color: #FFD700;
     font-weight: 100;
     font-size: 60px;
-    margin-right: 50px;
 
     text-shadow:
     -5px -5px 0 #4169E1,
@@ -123,23 +122,21 @@ header{
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .search-box {
     gap: 10px;
     display: flex;
     margin-bottom: 20px;
-    align-items: center;
-    position: relative;
+    margin-left: 60px;
 }
 
 .search-box input{
-    width: 350px;
+    width: 380px;
     height: 30px;
-    margin-left: 10px;
     border-radius: 6px;
-    border: 1px solid black;
+    border: none;
     font-size: 18px;
     padding: 8px;
 }
@@ -154,11 +151,9 @@ header{
 #suggestion {
   background-color: white;
   position: absolute;
-  width: 350px;
-  position: absolute;
+  width: 380px;
   max-height: 300px;
-  top: 110%;
-  margin-left: 10px;
+  margin-top: 40px;
   z-index: 20;
   border-radius: 10px;
 }
@@ -189,8 +184,7 @@ header{
 }
 
 .wrapper{
-    width: 1300px;
-    margin: 0 auto 70px auto;
+    width: 1800px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
@@ -214,7 +208,7 @@ header{
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1700px;
     margin-top: 50px;
 }
 
@@ -270,7 +264,7 @@ header{
 
 .footer {
     position: relative;
-    width: 1350px;
+    width: 1310px;
     color: white;
     margin: 0 auto;
 }

@@ -3,6 +3,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const typeFilter = urlParams.get('type');
 const genFilter = urlParams.get('gen');
 const pokemonCount = 1025;
+const filterInfo = document.querySelector('#filter-info');
 
 const colors = {
     fire: '#e75c50',
@@ -24,6 +25,40 @@ const colors = {
     fighting: '#A52A2A',
     normal: '#DCDCDC'
 };
+
+const generationMap = {
+    "generation-i": "Geração I",
+    "generation-ii": "Geração II",
+    "generation-iii": "Geração III",
+    "generation-iv": "Geração IV",
+    "generation-v": "Geração V",
+    "generation-vi": "Geração VI",
+    "generation-vii": "Geração VII",
+    "generation-viii": "Geração VIII",
+    "generation-ix": "Geração IX"
+};
+
+if (typeFilter || genFilter) {
+    let html = "";
+
+    if (typeFilter) {
+        const selectedTypes = typeFilter.split(',');
+        const typeHTML = selectedTypes
+            .map(type => `<span class="type-tag" style="background-color:${colors[type] || '#ccc'}">${type}</span>`)
+            .join(' ');
+        html += `<h2>Tipos pesquisados:</h2> ${typeHTML}`;
+    }
+
+    if (genFilter) {
+        const selectedGens = genFilter.split(',');
+        const genHTML = selectedGens
+            .map(gen => `<span class="gen-tag">${generationMap[`generation-${gen}`] || gen}</span>`)
+            .join(' ');
+        html += `<h2>Geração(ões):</h2> ${genHTML}`;
+    }
+
+    filterInfo.innerHTML = html;
+}
 
 const fetchPokemons = async () => {
   for (let i = 1; i <= pokemonCount; i++) {

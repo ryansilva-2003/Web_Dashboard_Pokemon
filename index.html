@@ -16,7 +16,7 @@
         <img width="80" height="80" alt="pokebola" src="imagens/pokeball2.png"/></a>
             <div class="nav-links">
                 <a href="index.html" class="btnHome-popup">Home</a>
-                <a href="pokemon.html" class="btnPokedex-popup">Pokémon</a>
+                <a href="pokemon.html" class="btnPokedex-popup">Pokémons</a>
             </div>
         </nav>
     </header>
@@ -29,18 +29,17 @@
 
     <div class="wrapper">
     <div class="form-box nome">
-                <h2>Procure seu pokémon</h2>
 
         <form action="searchForm">
                 <div class="input-box">
-                    <label for="pokemon-name">.</label>
                     <input type="text" id="pokemon-name" placeholder="Nome ou número">
+                    <ul id="suggestion"></ul>
                 </div>
 
 
                 <div class="container">
                     <div class="select-btn">
-                        <span class="btn-text">Selecionar tipo V</span>
+                        <span class="btn-text">Selecionar tipo(s) V</span>
                     </div>
 
                     <ul class="list-items">
@@ -58,7 +57,7 @@
                         </li>
 
                         <li class="item"><span class="checkbox"></span>
-                            <span class="item-text">Eletric</span>
+                            <span class="item-text">Electric</span>
                         </li>
 
                         <li class="item"><span class="checkbox"></span>
@@ -123,7 +122,7 @@
 
                 <div class="container">
                     <div class="selector">
-                        <span class="btb-text">Selecionar geração V</span>
+                        <span class="btb-text">Selecionar geração(s) V</span>
                     </div>
 
                     <ul class="list-items2">
@@ -198,12 +197,13 @@
         </div>
 
     </div>
+    </div>
 
-    <footer class="footer">
+       <footer class="footer">
         <div id="footer_content">
             <div id="footer_contacts">
-
                 <h1>Pokédex</h1>
+
 
                 <div id="footer_social_media">
                     <a href="https://www.linkedin.com/in/ryan-s-oliveira/" class="footer_link" id="Linkedin">
@@ -218,7 +218,7 @@
             </div>
 
         <div class="footer_copyright" id="footer_copyright">
-                <div class="info">
+                <div class="cons">
                     <p>Este site apresenta Pokémon das gerações 1 a 9.</p>
                 </div>
 
@@ -229,9 +229,9 @@
         </div>
 
     <div class="Pokemon-footer">
-        <div class="imgContainer2">
-            <a href="page.html?id=25">
-            <img width="250" height="250" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="PikachuFooter"></a>
+        <div class="imgContainer">
+            <a href="poke.html?id=25">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="PikachuFooter"></a>
         </div>
     </div>
 

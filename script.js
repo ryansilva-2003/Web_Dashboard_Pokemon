@@ -1,5 +1,17 @@
 const totalPokemons = 809;
 
+const generationMap = {
+    "generation-i": "Geração I",
+    "generation-ii": "Geração II",
+    "generation-iii": "Geração III",
+    "generation-iv": "Geração IV",
+    "generation-v": "Geração V",
+    "generation-vi": "Geração VI",
+    "generation-vii": "Geração VII",
+    "generation-viii": "Geração VIII",
+    "generation-ix": "Geração IX"
+}
+
 function getRandomPokemonId() {
     return Math.floor(Math.random() * totalPokemons) + 1;
 }
@@ -34,7 +46,7 @@ typeItems.forEach(item => {
     item.addEventListener("click", () => {
         item.classList.toggle("checked");
         const checked = document.querySelectorAll(".item.checked");
-        btnText.innerText = checked.length > 0 ? `${checked.length} Selecionado(s)` : "Selecionar tipo V";
+        btnText.innerText = checked.length > 0 ? `${checked.length} Selecionado(s)` : "Selecionar tipo(s) V";
     });
 });
 
@@ -50,7 +62,7 @@ genItems.forEach(iten => {
     iten.addEventListener("click", () => {
         iten.classList.toggle("checked");
         const checked = document.querySelectorAll(".iten.checked");
-        btbText.innerText = checked.length > 0 ? `${checked.length} Selecionados` : "Selecionar geração V";
+        btbText.innerText = checked.length > 0 ? `${checked.length} Selecionado(s)` : "Selecionar geração(s) V";
     });
 });
 
@@ -116,7 +128,7 @@ loadPokemons ();
 
 input.addEventListener("input", () => {
     const query = input.value.toLowerCase();
-    suggestion.innetHTML = "";
+    suggestion.innerHTML = "";
 
     if (query.length == 0) return;
     

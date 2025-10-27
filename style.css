@@ -50,7 +50,7 @@ header{
 
 .nav-links {
     display: flex;
-    gap: 190px;
+    gap: 300px;
     position: absolute;
     top: 50%;              
     left: 50%;          
@@ -116,7 +116,6 @@ header{
     align-items: center; 
     height: 100px;
     margin-top: 50px;
-    margin-right: 25px;
 }
 
 .title h1 {
@@ -142,8 +141,8 @@ header{
     border-radius: 20px;
     backdrop-filter: blur(7px) brightness(95%);
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    margin-bottom: 100px;
     
-
     align-self: center;
     margin-top: 30px;
 }
@@ -151,14 +150,6 @@ header{
 .wrapper .form-box{
     width: 100%;
     padding: 40px;
-}
-
-.form-box h2{
-    font-size: 2em;
-    color: black;
-    text-align: center;
-    margin-right: 55px;
-    margin-bottom: 10px;
 }
 
 Form {
@@ -173,17 +164,13 @@ Form {
     justify-content: center;
 }
 
-.input-box label{
-    display: flex;
-    flex-direction: column;
-    color: transparent;
-}
-
 .input-box input{
-    width: 310px;
+    position: relative;
+    margin-top: 30px;
+    width: 400px;
     height: 35px;
     border-radius: 8px;
-    border: 1px solid black;
+    border: none;
     padding: 8px;
     font-size: 16px;
 }
@@ -194,19 +181,42 @@ Form {
     font-size: 16px; 
 }
 
+#suggestion {
+    position: absolute;
+    background-color: white;
+    border-radius: 10px;
+    width: 400px;
+    max-height: 300px;
+    z-index: 99;
+
+    padding: 0;
+}
+
+#suggestion li{
+    padding: 5px;
+    cursor: pointer;
+    list-style-type: none;
+}
+
+#suggestion li:hover{
+    background-color: #a8a7a7;
+    border-radius: 10px;
+    text-decoration: underline;
+}
+
 .select-btn{
     display: flex;
     height: 35px;
     align-items: center;
     justify-content: center;
-    margin-top: 18px;
-    padding: 0 80px;
+    margin-top: 30px;
+    width: 400px;
     border-radius: 8px;
     cursor: pointer;
     background-color: white;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid black;
+    border: none;
 }
+
 .select-btn .btn-text{
     font-size: 17px;
     font-weight: 400;
@@ -227,7 +237,7 @@ Form {
 .list-items{
     display: none;
     position: absolute;
-    max-width: 288px;
+    max-width: 400px;
     width: 100%;
     margin-top: 15px;
     border-radius: 8px;
@@ -302,14 +312,14 @@ Form {
     height: 35px;
     align-items: center;
     justify-content: center;
-    margin-top: 18px;
-    padding: 0 65px;
+    margin-top: 30px;
+    width: 400px;
     border-radius: 8px;
     cursor: pointer;
     background-color: white;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid black;
+    border: none;
 }
+
 .selector .btb-text{
     font-size: 17px;
     font-weight: 400;
@@ -330,7 +340,7 @@ Form {
 .list-items2{
     display: none;
     position: absolute;
-    max-width: 297px;
+    max-width: 400px;
     width: 100%;
     margin-top: 15px;
     border-radius: 8px;
@@ -402,14 +412,15 @@ Form {
     
 
 .search-btn{
-    padding: 7px 30px;
+    height: 36px;
+    width: 200px;
     background: #1E90FF;
     color: white;
     border: none;
     border-radius: 6px;
     font-size: 0.9em;
     cursor: pointer;
-    margin-top: 18px;
+    margin-top: 30px;
 }
 
 .search-btn:hover {
@@ -422,14 +433,12 @@ Form {
     margin: 0 auto;
     align-items: center;
     justify-content: center;
-}
-
-.pokemon-home{
-    background-color: white;
+    position: absolute;
+    margin-left: 20px;
 }
 
 .imgContainer{
-    transform: scale(0.6);
+    transform: scale(0.7);
     cursor: pointer;
 }
 
@@ -440,8 +449,9 @@ Form {
 
 .footer {
     position: relative;
-    width: 100%;
+    width: 1510px;
     color: white;
+    margin: 0 auto;
 }
 
 .footer_link{
@@ -496,7 +506,7 @@ Form {
     text-align: center;
 }
 
-.info{
+.cons{
     text-align: center;
     margin-left: 200px;
     margin-bottom: 3.0rem;
@@ -518,16 +528,13 @@ Form {
 .Pokemon-footer {
     position: absolute;
     bottom: 0; 
-    right: 0;
-}
-
-.imgContainer2{
-    transform: scale(0.7);
+    right: 30px;
 }
 
 .Pokemon-footer img {
     margin-right: 20px;
-    margin-bottom: 0; 
-    width: 220px; 
+    margin-bottom: 30px; 
+    width: 160px; 
     height: auto;
+    transform: scale(1.6);
 }

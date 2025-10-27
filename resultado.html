@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokémon</title>
     <link rel="stylesheet" href="resultado.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+
+        <div class="title">
+            <h1>Pokédex</h1>
+        </div>
 
         <header class="header">
             <nav class="navbar">
@@ -14,25 +19,56 @@
                 <img width="80" height="80" alt="pokebola" src="imagens/pokeball2.png"/></a>
                     <div class="nav-links">
                         <a href="index.html" class="btnHome-popup">Home</a>
-                        <a href="pokemon.html" class="btnPokedex-popup">Pokémon</a>
+                        <a href="pokemon.html" class="btnPokedex-popup">Pokémons</a>
                     </div>
             </nav>
         </header>
 
-            <div class="wrapper-container">
-        
-        <form action="searchForm">
-                <div class="search-box">
-                    <input type="text" placeholder="Nome ou número" id="search">
-                    <button type="submit" class="searchPokemon">Search</button>
-                </div>
-        </form>
+        <div id="filter-info"></div>
 
+        <div class="wrapper-container">
         <div class="wrapper">
             <div class="pokeContainer" id="pokeContainer"></div>
         </div>
     </div>
     
+       <footer class="footer">
+        <div id="footer_content">
+            <div id="footer_contacts">
+                <h1>Pokédex</h1>
+
+
+                <div id="footer_social_media">
+                    <a href="https://www.linkedin.com/in/ryan-s-oliveira/" class="footer_link" id="Linkedin">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+
+                    <a href="https://github.com/ryansilva-2003" class="footer_link" id="Github">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        <div class="footer_copyright" id="footer_copyright">
+                <div class="cons">
+                    <p>Este site apresenta Pokémon das gerações 1 a 9.</p>
+                </div>
+
+                <div class="developer">
+                    <p>ryansilvadeoliveira53@gmail.com</p>
+                    <p>&#169 2025 . Desenvolvido por Ryan Silva</p>
+                </div>
+        </div>
+
+    <div class="Pokemon-footer">
+        <div class="imgContainer">
+            <a href="poke.html?id=25">
+            <img width="250" height="250" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="PikachuFooter"></a>
+        </div>
+    </div>
+
+    </footer>
 
 
     <script src="resultado.js"></script>

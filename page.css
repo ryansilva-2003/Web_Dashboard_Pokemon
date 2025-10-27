@@ -42,7 +42,7 @@ header{
 
 .nav-links {
     display: flex;
-    gap: 190px;
+    gap: 300px;
     position: absolute;
     top: 50%;              
     left: 50%;          
@@ -178,7 +178,7 @@ header{
 .type.water { background-color: #7eaff9; }
 .type.grass { background-color: #52ab83; }
 .type.poison { background-color: #bf8fc6; }
-.type.electric { background-color: #ffeb6a; color: #000; }
+.type.electric { background-color: #ffeb6a; }
 .type.flying { background-color: #B0E0E6; }
 .type.psychic { background-color: #ed63a2; }
 .type.ice { background-color: #2fdbea; }
@@ -269,7 +269,7 @@ header{
 
 .footer {
     position: relative;
-    width: 1350px;
+    width: 1400px;
     color: white;
     margin: 0 auto;
     margin-top: 60px;
