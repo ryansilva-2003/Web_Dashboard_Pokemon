@@ -24,3 +24,20 @@ O foco foi praticar lógica de programação, consumo de API (PokéAPI) e melhor
   <li>JavaScript</li>
   <li>PokéAPI para dados dos Pokémon</li>
 </ul>
+<hr>
+<h3>⚠️Observações</h3>
+O site pode apresentar lentidão em alguns momentos ao carregar os Pokémon, pois são 1025 registros sendo processados.
+Como os dados são obtidos de uma API pública (PokéAPI), eventuais instabilidades ou falhas na API — como erros nas imagens ou indisponibilidade temporária — podem afetar o funcionamento do site.
+<p></p>
+<p>A pesquisa pode ser realizada de diferentes formas:</p>
+<ul>
+  <li>Por nome ou ID, buscando um Pokémon específico</li>
+  <li>Por tipo, podendo selecionar um ou vários tipos ao mesmo tempo.</li>
+  <li>Por geração, também com a opção de selecionar múltiplas gerações simultaneamente.</li>
+</ul>
+<p>A pesquisa é feita de forma individual.</p>
+<hr>
+
+![page-pk](https://github.com/user-attachments/assets/bb753b37-8ce0-4e35-960f-88f85f3531cc)
+
+
