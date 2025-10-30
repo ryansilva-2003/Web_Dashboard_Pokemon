@@ -532,6 +532,7 @@ Form {
     position: absolute;
     bottom: 0; 
     right: 30px;
+    margin-bottom: 20px;
 }
 
 .Pokemon-footer img {
